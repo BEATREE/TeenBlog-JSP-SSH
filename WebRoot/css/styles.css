@@ -1,0 +1,416 @@
+@charset "UTF-8";
+/* CSS 文档 */
+/*
+所用 CSS3 属性   2017-5-19 肖尊严
+——————————————————————————————————————————————————————————————
+transition 属性
+
+transition: property duration timing-function delay;
+默认值：all 0 ease 0
+transition-property:规定设置过渡效果的 CSS 属性的名称。 
+transition-duration:规定完成过渡效果需要多少秒或毫秒
+transition-timing-function:规定速度效果的速度曲线
+transition-delay:定义过渡效果何时开始，启动前的延迟间隔（可缺省，提高反应速度）
+——————————————————————————————————————————————————————————————
+animation 动画属性
+
+animation: name duration timing-function delay iteration-count direction fill-mode play-state;
+默认值：none 0 ease 0 1 normal
+animation-name:指定要绑定到选择器的关键帧的名称，可搭配 @keyframes 使用
+animation-duration:动画指定需要多少秒或毫秒完成
+animation-timing-function:设置动画将如何完成一个周期(规定速度效果的速度曲线)、
+					属性:linear 	动画从头到尾的速度是相同的。
+						ease 		默认。动画以低速开始，然后加快，在结束前变慢。
+						ease-in 		动画以低速开始。 
+						ease-out 		动画以低速结束。 
+						ease-in-out 	动画以低速开始和结束。	
+
+animation-delay：设置动画在启动前的延迟间隔
+animation-iteration-count：定义动画的播放次数
+animation-direction：指定是否应该轮流反向播放动画。
+animation-fill-mode：规定当动画不播放时（当动画完成时，或当动画有一个延迟未开始播放时），要应用到元素的样式。
+animation-play-state：指定动画是否正在运行或者停止；
+
+
+———————————————————————————————————————————————————————————————
+@keyframes 规则
+
+属性都是必需的！
+
+@keyframes animationname {keyframes-selector {css-styles;}}
+animationname：定义animation的名称。
+keyframes-selector： 动画持续时间的百分比。
+					合法值：
+						0-100%
+						from (和0%相同)
+						to (和100%相同)
+css-styles：一个或多个合法的CSS样式属性
+———————————————————————————————————————————————————————————————
+transform  属性
+
+transform: none|transform-functions;
+属性太多，不在列举
+
+———————————————————————————————————————————————————————————————
+
+*/
+
+* { margin: 0; padding: 0 }
+body { font: 12px "宋体", "Arial Narrow", HELVETICA; 
+		
+		color: #3F3E3C; 
+		line-height: 1.5; 
+		background-image: url(../images/bg2.jpg) ;
+		background-attachment: fixed; 
+		background-size: cover;
+		word-wrap: break-word;
+		transition: all 1s;
+}
+div{overflow: hidden;}
+ul, ol { list-style: none; }
+a { color: #a6a6a6; 
+	text-decoration: none; 
+	transition: All 1s ease; 			/*将相关的css属性进行 1s 的转换*/
+	-moz-transition: All 1s ease; /*ease 	规定慢速开始，然后变快，然后慢速结束的过渡效果*/
+	}
+a:hover { color: #fff; }
+.blank { height: 5px; 
+		width: 100%; 
+		margin: auto; 
+		clear: both ;
+}
+/* -----------------------nav 一级导航----------------- */
+header { width: 100%; 
+		 background:  #4a4a4a; 
+		 height: 115px; 
+		 border-bottom: #464647 1px solid; 
+}
+header nav { margin: 0 auto; 
+			 width: 1000px; 
+			 text-align: center; 
+			 padding-top: 15px ;
+}
+header nav ul li { line-height: 40px; 
+					display: inline; 
+}
+header nav ul li a { color: #E7E7E7; 
+					display: block; 
+					padding: 0 20px; 
+					margin-right: 10px; 
+					float: left ;
+}
+header nav ul li a:hover, #nav_current { 
+			color: #fff; 
+			background: rgba(20, 20, 20, 0.65); 
+			border-radius: 6px; 
+			}
+#mainbody { width: 100%; 
+			border-top: #000 1px solid; 
+			clear: both; 
+}
+/* ---------------------info------------------------- */
+.info { width: 1000px; 
+		margin: 40px auto; 
+		clear: both; 
+}
+		 
+/* 图片逐渐显示的动画效果 */
+.info figure { 	width: 630px; 
+				height: 250px; 
+				position: relative; 
+				animation:figureTop 3s ease 0.5s backwards;
+				float: left; 
+}
+.info figcaption { padding: 20px; 
+					position: absolute; 
+					top: 20%; 
+					left: 0; 
+					background: rgba(153,153,153,.8); 
+					color: white; 
+					opacity: 0; /*定义为不可见，鼠标放上去改变透明度*/
+					-moz-transition: opacity .75s ease-out; 
+					transition: opacity .75s ease-out; /*对渐变时间进行控制*/
+}
+
+/* 用opacity 设置鼠标放上去显示文字的效果 */
+.info figure:hover figcaption { opacity: 1; } 
+.info figcaption strong { display: block; 
+						  line-height: 40px; 
+}
+/* card */
+.card { border-radius: 6px; 
+		background:  #2a2a2a; 
+		width: 350px; 
+		float: right; 
+		height: 250px; 
+}
+.card span{
+	font-size:20px;
+	margin-left:88px; 
+	color: white;
+}
+.card h1 { padding: 10px }
+.card p { padding: 0 0 0 40px; 
+		 line-height: 28px; 
+		 color: #89919a;
+		 
+}
+.linkmore { margin: 15px 0 0 15px }
+.linkmore li a { height: 50px; 
+				 width: 50px; 
+				 display: block; 
+				 box-shadow: 0px 1px 0px rgba(255,255,255,.1), inset 0px 1px 1px rgba(0,0,0,.7); 
+				 border-radius: 50%; 
+				 float: left; 
+				 margin: 0 6px; 
+}
+				/*下方图片进行转动 */
+.linkmore li a:hover { opacity: 0.5; 
+					   -moz-transform: rotate(30deg); 
+					   transform: rotate(30deg); 
+}
+.talk, .address, .email, .photos, .heart { background: url(../images/icons.png) no-repeat; 
+}
+.talk { background-position: 13px 18px; }
+.address { background-position: 12px -22px; }
+.email { background-position: 12px -60px; }
+.photos { background-position: 12px -137px; }
+.heart { background-position: 13px -99px; }
+
+/* --------------------博客列表-------------------- */
+.blogs { width: 1000px; 
+		 margin: 0 auto 20px; 
+}
+.bloglist { width: 666px; 
+			float: left; 
+}
+.bloglist>li {border-right: #111 2px solid; 
+	 padding: 20px 0; 
+}
+.arrow_box { background: #d6d6d6; 
+	width: 630px; 
+	color:  #2F4F4F; 
+	border-radius: 6px; 
+	position: relative; 
+	overflow:visible;
+}
+/* 三角形 */
+.ti {width: 0px; 
+	height: 0px; 
+	border-style: solid; 
+	border-width: 0px 0px 20px 22px; 
+	border-color: transparent transparent transparent #4a4a4a; /*修改盒子的边框为透明实现三角形*/
+	position: absolute; 
+	left: 630px; 
+	top: 20px; 
+}/* 三角形 */
+.ci { width: 10px; 
+	  height: 10px; 
+	  border-radius: 50%; 
+	  position: absolute; 
+	  left: 658px; 
+	  top: 16px; 
+	  background: #2E8B57; 
+	  border: 2px solid #333; 
+} 
+.ci:hover { border: 2px solid #B9B9B9; 
+}
+.arrow_box h2.title { padding: 10px 0 0 20px; }
+.arrow_box h2 a{
+	 color:  #008573;
+}
+.arrow_box h2 a:hover { padding-left: 20px }
+.textinfo { overflow: hidden; }
+.arrow_box img { 	width: 150px; 
+					padding: 4px; float: left; 
+					-moz-transition: All 1s ease; 
+					border-radius: 4px; 
+					margin: 0 20px 20px; 
+}
+.arrow_box img:hover { 
+		opacity: 0.6; 
+		width: 160px;
+}
+.arrow_box p { line-height: 24px; padding: 0 20px 20px;}
+.arrow_box p:hover { text-shadow: 0.25px 0.25px 0.25px #000; }
+.details { background: rgba(1,1,1,0.3); border-radius: 0 0 6px 6px; padding: 0 10px; }
+.details li { line-height: 26px; display: inline; margin-right: 10px; }
+.details li a { color: #3F3E3C; }
+.details li a:hover { color: #933; }
+/*定义对应图标*/
+.icon-time, .likes, .comments { background: url(../images/icons.png) no-repeat; }
+.icon-time { background-position: 0 -208px; padding: 0 0 0 18px; }
+.likes, .comments { float: right; padding: 0 0 0 14px; }
+.likes { background-position: 0 -240px; }
+.comments { background-position: 0 -220px; }
+/*-------------------aside侧边栏--------------------------*/
+aside { width: 310px; 
+		float: right; 
+		margin: 20px 0; 
+}
+aside h2, footer h2 { 	font-size: 16px; 
+						margin-bottom: 10px; 
+						color: #ccc; 
+}
+aside div { border-radius: 6px;
+			padding: 15px; 
+			background: #2a2a2a; 
+			margin-bottom: 20px; 
+}
+/* 图片壁纸 */
+.toppic li img { width: 80px; 
+				 float: left; 
+				 margin-right: 10px; 
+}
+.toppic ul li { margin: 15px 0; }
+.toppic ul li a { display: block; 
+				  width: 100%; 
+				  clear: both; 
+				  overflow: hidden; 
+}
+.toppic li p { color: #B5783E; 
+			   padding-left: 110px; 
+			   margin-top: 5px; 
+}
+
+/* 热门点击 */
+.clicks li { line-height: 24px; }
+.clicks li span:before { content: "["; }
+.clicks li span:after { content: "]"; }
+.clicks li span a { padding: 0 5px; 
+					color: #EEE5DE; 
+}
+.clicks li a{color: #b9b9b9;}
+.clicks li a:hover { text-decoration: underline; 
+					color: white; 
+}
+/* search */
+.searchform { overflow: hidden; 
+			  padding: 10px; 
+}
+.searchform input { background: url(../images/icons.png) no-repeat 3px -318px; 
+					border: 1px solid #111; 
+					width: 220px; 
+					line-height: 30px; 
+					color: #b9b9b9; 
+					padding-left: 30px; 
+}
+/* music */
+.viny dl dd { color: #b9b9b9; line-height: 24px; }
+.art { 	background: url(../images/vinyl.png) no-repeat left; 
+		width: 130px; 
+		float: left; 
+		background-size: 120px; 
+}
+.viny .art img { width: 90px; 
+				height: 90px; 
+				margin-left: 11px ;
+}
+.viny dd span { width: 12px; 
+				height: 24px; 
+				margin-right: 7px; 
+				float: left; 
+				display: block; 
+}
+.icon-song span, .icon-artist span, .icon-album span, .icon-like span { 
+	background: url(../images/icons.png) no-repeat 
+}
+
+.icon-song span { background-position: -33px -344px ;}
+.icon-artist span { background-position: -16px -344px; }
+.icon-album span { background-position: 0 -344px; }
+.icon-like span { background-position: -1px -299px; }
+.icon-like a { color: #B5783E; }
+.icon-like a:hover { color: #FFF;
+					 text-decoration: underline; 
+}
+.music audio { width: 100%; 
+				padding-top: 10px; 
+}
+/* --------------------------footer----------------------- */
+footer { 
+	width:100%;
+	background: rgba(0, 0, 0, 0.6); 
+}
+.footer-mid { width: 60%; 
+			  margin: auto;
+			  padding: 20px 0; 
+}
+.footer-mid li { line-height: 26px; }
+/* 访客留言 */
+.visitors { width: 400px; float: left; }
+.visitors dl { display: block; 
+				overflow: hidden; 
+				margin-bottom: 12px; 
+}
+.visitors dd { line-height: 22px; 
+				white-space: nowrap; 
+				text-overflow: ellipsis; 
+				overflow: hidden; 
+}
+.visitors time { color: #066; 
+				 margin-left: 10px 
+}
+.visitors dt { float: left; }
+.visitors dt img { width: 67px; 
+				   height: 67px; 
+				   margin-right: 10px; 
+}
+.links { float: left; 
+		 margin: 0 100px 0 20px; 
+}/* 友情链接 */
+/* 摄影作品 */
+.flickr { width: 250px; 
+		  float: right 
+}
+.flickr ul li { margin: 0 11px 11px 0; 
+				float: left; 
+				background: #000; 
+}
+.flickr ul li img { width: 67px; 
+					height: 67px; 
+}
+.flickr ul li img:hover { opacity: 0.2; }
+
+/*底部页脚*/
+.footer-bottom { background: rgba(0, 0, 0, 0.6); 
+				padding: 12px  40%;
+				
+}
+/*submitButton*/
+#submitButton{
+	padding: 5px;
+	font-size: 13.5px;
+	border-radius: 5px;
+	background-color: #ddd;
+}
+#submitButton:HOVER {
+	background-color: #0080ff;
+	color: white;
+}
+/*定义提交按钮的样式*/
+#submitButton{
+	border: none;
+	padding: 8px 12px;
+	background-color:#00a1d2;
+	border-radius: 3px;
+	font-size: 14px;
+	color:#fff;
+	cursor: pointer;
+}
+#submitButton:hover{
+	box-shadow: 0 0 3px #00a1d2;
+	text-shadow: 0 0 1px #b3d6dc,0 0 2px #e6e9de;
+}
+.submitButton{
+	padding:6px;
+	background-color: #008ec2;
+	color:white;
+	size: 12px;
+	border-radius: 5px;
+}
+
+.submitButton:hover{
+	size:15px;
+	box-shadow: 2px 2px 2px #888888;
+}

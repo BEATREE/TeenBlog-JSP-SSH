@@ -1,0 +1,26 @@
+<!DOCTYPE validators PUBLIC
+        "-//OpenSymphony Group//XWork Validator 1.0.2//EN"
+        "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+<validators>
+	
+	 <field name="postTitle">
+          <field-validator type="requiredstring">
+                  <message>文章标题不能为空</message>
+         </field-validator>
+     </field>
+     <field name="postParagraphs">
+          <field-validator type="requiredstring">
+                   <message>文章内容不能为空</message>
+         </field-validator>
+     </field>
+     <field name="labels">
+          <field-validator type="requiredstring">
+                 	<message>文章标签不能为空</message>
+         </field-validator>
+     </field>
+    <field name="featuredPicture">
+          <field-validator type="required">
+                 	<message>文章图片不能为空</message>
+         </field-validator>
+     </field>
+</validators>

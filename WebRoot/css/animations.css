@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+/*
+	@keyframes 标签，用于对应style.css中的animation属性！
+*/
+@keyframes figureTop{from{
+opacity: 0;
+transform: perspective(400px) rotateX(90deg);
+}
+to{
+opacity: 1;
+transform: perspective(400px) rotateX(0deg);
+}
+}
+ @-moz-keyframes pageTop { from{	/*火狐适配*/
+opacity: 0;
+-moz-transform: perspective(400px) rotateX(90deg);
+}
+ to{
+opacity: 1;
+-moz-transform: perspective(400px) rotateX(0deg);
+}
+}

@@ -1,0 +1,403 @@
+@CHARSET "UTF-8";
+*{
+	transition:all .6s ease;
+}
+body{
+	
+}
+ul,ol{
+	list-style: none;
+}
+tr{
+	padding: 2px;
+	line-height: 1.5;
+}
+/*头部部分定义开始*/
+header{
+	margin-left:-8px;
+	margin-top:-8px;
+	width:100%;
+	height: 26px;
+	background-color: #23282d;
+	color: #9ea3a8;
+	display: inline-block;
+	padding:6px;
+	position: fixed;
+}
+header a{
+	color:#9ea3a8;
+	text-decoration: none;
+}
+header a .username{
+	font-family:"楷体";
+	font-size:18px;
+	margin-right: 15px;
+}
+header img{
+	border-radius:20%;
+	height: 25px;
+	position: relative;
+	display: inline;
+}
+
+
+header .logo{
+	float:left;
+	margin-left: 5px;
+	margin-right: 25px;
+}
+header #userpart{
+	float:right;
+	margin-right: 25px;
+}
+header #userpart .userhead{
+	float:right;
+	height: 25px;
+	transition:all .5s ease;
+}
+header #userpart .userhead:HOVER{
+	height: 56px;
+}
+
+/*头部部分定义结束*/
+/*aside部分定义开始*/
+aside{
+	margin-left:-8px;
+	height: 100%;
+	width:12.2%;
+	display: block;
+	float:left;
+	text-align:left;
+	position: fixed;
+	margin-top:30px;
+	background-color: #23282d;
+	box-sizing:border-box;
+}
+aside ul{
+	margin-top:30%;
+	padding-left:0px;
+	display: block;
+}
+aside ul li{
+	box-sizing:border-box;
+	width:100%;
+	height:38px;
+	display: inline-block;
+}
+aside ul li #two{
+	 box-sizing:border-box;
+	 padding-left:30%;
+	 padding-bottom:8px;
+	 width:180px;
+	 background-color:#23282d;
+	 border-bottom-right-radius:6px;
+	 border-bottom-left-radius:6px;
+	 border-top-right-radius:6px;
+     display: none;  
+     z-index: 10000;
+}
+aside ul li #two li{
+	 height:38px;
+     display: block;  
+}
+
+aside ul li:hover{
+	margin-left: 6px;
+	margin-right:15px;
+}
+#first:hover{
+	background-color:#191e23;
+}
+aside li:NTH-CHILD(1):hover #two{
+	transition:all 2s;
+	margin-top:-45px;
+	margin-left:100%;
+	border-left:red 5px solid;
+	display: block;
+	
+} 
+aside li:NTH-CHILD(2):hover #two{
+	transition:all 2s;
+	margin-top:-45px;
+	margin-left:100%;
+	border-left:#00ff00 5px solid;
+	display: block;
+}
+aside li:NTH-CHILD(3):hover #two{
+	transition:all 2s;
+	margin-top:-45px;
+	margin-left:100%;
+	border-left:#3338f2 5px solid;
+	display: block;
+}  
+
+aside ul li a{
+	line-height:38px;
+	width:100%;
+	display:block;
+	color:#9ea3a8;
+	float: left; 
+	text-decoration: none; 
+}
+/*定义右侧线条*/
+.article{
+	background:url(../images/article.png) no-repeat 25% center;
+	padding-left:40%;
+	border-right:red 5px solid;
+}
+.picture{
+	background:url(../images/picture.png) no-repeat 25% center;
+	padding-left:40%;
+	border-right:#00ff00 5px solid;
+}
+.comment{
+	background:url(../images/comment.png) no-repeat 25% center;
+	padding-left:40%;
+	border-right:#3338f2 5px solid;
+}
+.profile{
+	background:url(../images/profile.png) no-repeat 25% center;
+	padding-left:40%;
+	border-right:#ff8040 5px solid;
+}
+
+.hidden{
+	background:url(../images/hidden.png) no-repeat 25% center;
+	padding-left:40%;
+	border-right:#ff0080 5px solid;
+	margin-top: 60%;
+}
+/*aside部分定义结束*/
+/*后台首页主体部分开始*/
+#container{
+	padding-left:1%;
+	box-sizing:border-box;
+	margin-top:30px;;
+	width:87.6%;
+	height:auto;
+	float:right;
+	background-color:#f1f1f1;
+}
+#container button{
+	z-index: 10;
+}
+/*文章发表页面开始*/
+.writing,.uploadImage{
+	margin-left: 15px;
+	margin-top: 50px;
+}
+.writing h1{
+	margin-left: 10px;
+}
+.uploadImage{
+	margin-left: 10px;
+}
+.writing #titles,.uploadImage #titles{
+	height: 38px;
+	width: 100%;
+	font-size: 25px;
+	margin-bottom: 16px;
+}
+.writing #leftParts,.uploadImage #leftParts{
+	float: left;
+	width:75%;
+	display:block;
+}
+.writing #rightParts{
+	float: left;
+	width:20%;
+	margin-left:22px;
+	display:block;
+}
+.writing #rightParts div{
+	background-color:#ffffff;
+	color:black;
+	margin: 18px;
+	padding:8px;
+	box-shadow: 2px 3px 5px #888888;
+	border-radius: 6px;
+}
+.uploadImage #rightParts{
+	float: left;
+	width:40%;
+	margin-left:20%;
+	display:block;
+}
+.uploadImage #rightParts input{
+	font-size: 16px;	
+}
+.uploadImage #rightParts div{
+	background-color:#ffffff;
+	color:black;
+	margin: 18px;
+	padding:8px;
+	box-shadow: 4px 6px 8px #888888;
+	border-radius: 18px;
+}
+.writing #rightParts h3{
+	border-bottom: 1.5px black solid;
+}
+.uploadImage #rightParts h3{
+	border-bottom: 1.5px black solid;
+}
+/*提交按钮开始*/
+.submitButton{
+	padding:6px;
+	background-color: #008ec2;
+	color:white;
+	size: 12px;
+	border-radius: 5px;
+}
+
+.submitButton:hover{
+	size:15px;
+	box-shadow: 2px 2px 2px #888888;
+}
+
+/*后台主页开始*/
+#container #welcome-panel{
+	width: 92%;
+	margin-left:2%;
+	height: 200px;
+	overflow: auto;
+	padding: 32px 10px 0;
+	border: 1px solid #e5e5e5;
+	border-radius:16px;
+	box-shadow: 2px 3px 3px rgba(0,0,0,.04);
+	background: #fff;
+	font-size: 13px;
+	line-height: 2.1em;
+}
+#container #welcome-panel a{color:#0073aa;}
+#container #posts,#container #images{
+	float:center;
+	box-sizing:border-box;
+	border-radius:16px;
+	box-shadow: 0 2px 2px rgba(0,0,0,.04);
+	background: #fff;
+	float:left;
+	width: 46%;
+	margin-top:2%;
+	margin-bottom:2%;
+	margin-left:2%;
+	padding:2%;
+	height: auto;
+}
+#container #posts,#container #images img{
+	border-radius:5px;
+	width: 45%;
+	margin: 1%;
+}
+#container #posts,#container #images img:HOVER{
+	width: 46%;
+}
+#welcome-panel .welcome-panel-column {
+	width: 32%;
+	min-width: 200px;
+	float: left;
+}
+
+#container #posts p{
+	text-indent:2em;
+}
+#container #posts p a{
+	margin-left: 16px;
+	color:#0073aa;
+}
+#container #images p a{
+	margin-left: 16px;
+	color:#0073aa;
+}
+
+/*文章信息页和图片信息页跳转按钮*/
+.jumpButton {
+	padding: 5px 8px;
+	position: relative;
+	text-decoration: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background: #f7f7f7;
+	text-shadow: none;
+	font-weight: 600;
+	font-size: 13px;
+	line-height: normal;
+	color: #0073aa;
+	cursor: pointer;
+	outline: 0;
+}
+.jumpButton:HOVER{
+	background-color: #008fd5;
+	color: white;
+}
+
+/*文章信息页面开始*/
+/* table,table tr th, table tr td { border:.5px solid #afaca5; } */
+.postsTable{
+	font-size:16px;
+	color:#333333;
+	word-wrap: break-word;
+	width: 100%;
+	border-spacing: 0;
+	padding:12px;
+	border-collapse: collapse;
+	border-radius:12px;
+	margin-top:2%;
+	margin-bottom: 5%;
+}
+.postsTable a{
+	color:black;
+	text-decoration:none;
+	margin:0;
+	text-align: left;
+}
+.postsTable a:HOVER{
+	color:#1289ab;
+}
+.postsTable tr{
+	border:0.1px black  solid;
+	border-collapse: collapse;
+	line-height: auto;
+}
+.postsTable th{
+	padding:2px;
+	border:0.1px black solid;
+	border-collapse: collapse;
+}
+
+.postsTable tr img{
+	width:180px;
+	float: left;
+}
+/*个人资料input样式*/
+.inputfield {
+	font-size: 15px;
+	padding:5px;
+	border: 0;
+    border-radius: 5px;
+	outline: none;
+	box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.06);
+	border-radius: 3px;
+	padding-left:12px;
+}
+.searchPlace{
+	margin-left: 2%;
+}
+.searchremind{
+	text-align:center;
+	width: 100%;
+	border-bottom: 3px #0aabaf solid;
+	font-size: 18px;
+	padding-bottom: 2px;
+}
+.spsearchPlace{
+	text-align:center;
+	width: 100%;
+	border-bottom: 3px #0aabaf solid;
+	font-size: 20px;
+	margin-left:37%;
+	margin-top:15px;
+	padding-bottom: 2px;
+}
+.changetr{
+	background-color:#DCDCDC;
+}

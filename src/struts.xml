@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 定义文件上传大小 -->
+	<constant name="struts.multipart.maxSize" value="-1"></constant><!-- 不限大小 -->
+	<package name="posts" namespace="/" extends="struts-default">
+		<action name="doPost" class="xzy.actions.PostAction">
+			<result name="success">index.jsp</result>
+		</action>
+		<action name="*Post" class="xzy.actions.PostAction" method="{1}Post">
+			<!-- 定义上传文件的类型 和保存路径-->
+			<param name="allowType">image/png,image/gif,image/jpg,image/jpeg</param>  
+            <param name="savePath">uploadFiles</param>
+            <result name="publishSuccess">index.jsp</result>
+            <result name="updateSuccess">post.jsp?pId=${postid}</result>
+            <result name="findSuccess">searchResult.jsp</result>
+            <result name="searchSuccess">/admin/user/searchPosts.jsp</result>
+            <result name="asearchSuccess">/admin/admin/searchPosts.jsp</result>
+            <result name="deleteSuccess">/admin/user/posts.jsp</result>
+            <result name="adeleteSuccess">/admin/admin/posts.jsp</result>
+            <result name="likeSuccess">index.jsp</result>
+			<result name="postList">index.jsp</result>
+			<result name="input">error.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+		
+	</package>
+	<package name="images" extends="struts-default">
+		<action name="doImage" class="xzy.actions.ImageAction">
+			<result name="success">picture.jsp</result>
+		</action>
+		<action name="*Image" class="xzy.actions.ImageAction" method="{1}Image">
+			<!-- 定义上传文件的类型 和保存路径-->
+			<param name="allowType">image/png,image/gif,image/jpg,image/jpeg</param>  
+            <param name="savePath">uploadFiles</param>
+            <result name="updateSuccess">/detailpicture.jsp?iId=${imageid}</result>
+            <result name="searchSuccess">/admin/user/searchPicture.jsp</result>
+            <result name="asearchSuccess">/admin/admin/searchPicture.jsp</result>
+            <result name="deleteSuccess">/admin/user/allPicture.jsp</result>
+            <result name="adeleteSuccess">/admin/admin/picture.jsp</result>
+            <result name="uploadSuccess">picture.jsp</result>
+			<result name="postList">index.jsp</result>
+			<result name="input">error.jsp</result>
+		</action>
+	</package>
+	<package name="user" extends="struts-default">
+		<action name="*Profile" class="xzy.actions.UserAction" method="{1}Profile">
+			<!-- 定义上传文件的类型 和保存路径-->
+			<param name="allowType">image/png,image/gif,image/jpg,image/jpeg</param>  
+            <param name="savePath">uploadFiles</param>
+            <result name="asearchSuccess">/admin/admin/searchUser.jsp</result>
+            <result name="aupdateSuccess">/admin/admin/users.jsp</result>
+             <result name="deleteSuccess">/admin/admin/users.jsp</result>
+			<result name="updateSuccess">/admin/user/profile.jsp</result>
+			<result name="input">error.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+	</package>
+	<package name="login" extends="struts-default">
+		<action name="doLogin" class="xzy.actions.LoginAction">
+			<result name="success">index.jsp</result>
+			<result name="input">error.jsp</result>
+			<result name="error">error.jsp</result>
+			<result name="loginError">login.jsp</result>
+		</action>
+		<action name="*Login" class="xzy.actions.LoginAction" method="{1}">
+			<result name="registersuccess">login.jsp</result>
+			<result name="input">error.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+	</package>
+	<!-- <package name="index"  extends="struts-default">
+		<action name="indexAction" class="xzy.actions.IndexAction">
+			<result name="success">main.jsp</result>
+		</action>
+	</package> -->
+	<package name="Admin"  extends="struts-default">
+		<action name="*Admin" class="xzy.actions.AdminAction" method="{1}Admin">
+			<result name="success">index.jsp</result>
+			<result name="loginSuccess">/admin/admin/index.jsp</result>
+			<result name="updateSuccess">/admin/admin/profile.jsp</result>
+			<result name="input">error.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+	</package>
+	<package name="Comment"  extends="struts-default">
+		<action name="*Comment" class="xzy.actions.CommentAction" method="{1}Comment">
+			<result name="submitSuccess">post.jsp?pId=${postId}</result>
+			<result name="deleteSuccess">admin/admin/comments.jsp</result>
+			<result name="success">index.jsp</result>
+			<result name="input">error.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+	</package>
+	<package name="colorPackage" extends="struts-default">
+		<action name="ColorChanger" class="xzy.actions.ColorChangerAction">
+			<result name="input">error.jsp</result>
+			<result name="success">colorChanger.jsp</result>
+		</action>
+	</package>
+	
+</struts>    
