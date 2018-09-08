@@ -23,5 +23,5 @@ When the project is named, it is named according to my personal blog name[teensh
 ## 结语
 第一次在GitHub上发布项目，这个项目当时写的很匆忙不是太好，大家多多见谅，有其他相关问题可以联系我。
 
-- [email to me](mailto:1336951311) 1336951311@qq.com | admin@teenshare.club
-- [个人博客](http://www.teenshare.club) 梯云博客
+- Email: 1336951311@qq.com | admin@teenshare.club
+- 个人博客：[梯云博客](http://www.teenshare.club) 
